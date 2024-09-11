@@ -29,7 +29,7 @@ const router = createBrowserRouter([
         path: '/job/:id',
         element: <JobDetails />,
         // Assuming the jobs.json is in the public folder:
-        loader: () => fetch('/jobs.json') 
+        loader: () => fetch('/jobs.json')  // Do not load all data load only what you need
       }
     ]
   }
