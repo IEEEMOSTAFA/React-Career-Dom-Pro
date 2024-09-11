@@ -3,6 +3,8 @@ import Job from '../Job/Job';
 
 const FeaturedJobs = () => {
     const [jobs, setJobs] = useState([]);
+    // This is not best way to show all data
+    const [dataLength,setDataLength] = useState(4);
 
 
     useEffect(() => {
@@ -23,8 +25,13 @@ const FeaturedJobs = () => {
 
             <div className='grid grid-cols-2 gap-6'>
                 {
-                    jobs.map(job => <Job job={job}></Job>)
+                    jobs.slice(0,dataLength).map(job => <Job job={job}></Job>)
                 }
+            </div>
+            <div className='text-center mt-3 mb-4'>
+            <div  className= {dataLength === jobs.length && 'hidden'}>
+                <button onClick={() => setDataLength(jobs.length)} className=' text-center mt-3 mb-4 btn bg-gradient-to-r from-cyan-500 to-blue-500'>Show All Jobs</button>
+            </div>
             </div>
         </div>
 
