@@ -13,7 +13,7 @@ const JobDetails = () => {
   const notify = () => {
     // saveJobApplication(id);
     toast("You have applied successfully!");
-    saveJobApplication(id);}
+    saveJobApplication(idInt);}
   // {
   //   // 
   //   toast("You have applied successfully!");
